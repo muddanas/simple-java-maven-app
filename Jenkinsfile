@@ -25,9 +25,7 @@ pipeline {
         }
        stage('Deploy') {
           steps{
-              sh 'scp -o StrictHostKeyChecking=no -i /tmp/my.pem target/my-app-1.0-SNAPSHOT.jar centos@34.214.222.45:/tmp/
-ssh -i /tmp/my.pem centos@34.214.222.45 java -jar /tmp/my-app-1.0-SNAPSHOT.jar'
-
+              sh 'scp -o StrictHostKeyChecking=no -i /tmp/my.pem target/my-app-1.0-SNAPSHOT.jar centos@34.214.222.45:/tmp/ ssh -i /tmp/my.pem centos@34.214.222.45 java -jar /tmp/my-app-1.0-SNAPSHOT.jar'
                }
   }
    }
