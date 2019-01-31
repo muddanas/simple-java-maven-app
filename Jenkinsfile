@@ -6,7 +6,7 @@ pipeline {
        jdk 'java1.8.0'
       }
  stages {
-       stages{'Build'}{
+       stage{'Build'}{
         steps {
                sh "mvn -B -DskipTests clean packages"
          }
