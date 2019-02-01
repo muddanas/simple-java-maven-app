@@ -11,6 +11,11 @@ pipeline {
  git branch: 'master', url:"https://github.com/muddanas/simple-java-maven-app.git" 
  } 
  } 
+  stage('sonar'){
+   steps{
+   sh 'mvn sonar:sonar -Dsonar.host.url=http://18.237.4.146:9000 -Dsonar.login=2598609e32a60bf2dd248db27d6f34e711c0e1f8'
+   }
+  }
  stage('Artifactory Configuration'){ 
  steps{ 
  rtServer( 
